@@ -1,0 +1,35 @@
+@page
+@model TesteCSharp.Pages.ListdragonballModel
+@{
+    ViewData["Title"] = "Dragon Ball Personagens";
+}
+
+<h1>Dragon Ball - Personagens</h1>
+
+<div class="container mt-4">
+    <div class="row">
+        @if (Model.Personagens.Any())
+        {
+            @foreach (var personagem in Model.Personagens)
+            {
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@personagem.Image" class="card-img-top" alt="@personagem.Name" style="height: 300px; object-fit: cover;" />
+                        <div class="card-body">
+                            <h5 class="card-title">@personagem.Name</h5>
+                            <p class="card-text text-muted">ID: @personagem.Id</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info" role="alert">
+                    Nenhum personagem encontrado. Carregando...
+                </div>
+            </div>
+        }
+    </div>
+</div>

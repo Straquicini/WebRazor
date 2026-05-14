@@ -84,8 +84,6 @@
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/icm7vl2dor-{0}-muycvpuwrr-muycvpuwrr.gz
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/1yhsiqthme-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/gil6qxv805-{0}-mlv21k5csn-mlv21k5csn.gz
-/workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/p9d647960r-{0}-jtflo0tc9f-jtflo0tc9f.gz
-/workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/yorv23bp4y-{0}-jtflo0tc9f-jtflo0tc9f.gz
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/staticwebassets.build.json
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/staticwebassets.build.json.cache
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/staticwebassets.development.json
@@ -96,3 +94,5 @@
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/TesteCSharp.pdb
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/TesteCSharp.genruntimeconfig.cache
 /workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/ref/TesteCSharp.dll
+/workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/p9d647960r-{0}-jtflo0tc9f-jtflo0tc9f.gz
+/workspaces/TesteCSharp/TesteCSharp/obj/Debug/net10.0/compressed/yorv23bp4y-{0}-jtflo0tc9f-jtflo0tc9f.gz
