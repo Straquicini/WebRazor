@@ -21,7 +21,7 @@ namespace TesteCSharp.Pages
 
             var client = _httpClientFactory.CreateClient("RestCountries");
             // pedir a API com a seguinte route, em que enviamos o 'cod' recebido
-            var response = await client.GetAsync("v3.1/alpha/co/{cod}");
+            var response = await client.GetAsync("v3.1/alpha/" + cod);
             if (!response.IsSuccessStatusCode) {
                 // Artigo não encontrado ou erro na API
                 return NotFound();

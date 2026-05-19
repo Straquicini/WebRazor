@@ -14,14 +14,11 @@ namespace TesteCSharp.Pages
         }
 
         public Personagem Infodragonball { get; set; }
-        public string id { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string cod) {
-            id = cod;
-
-            var client = _httpClientFactory.CreateClient("RestCountries");
+            var client = _httpClientFactory.CreateClient("DragonBallApi");
             // pedir a API com a seguinte route, em que enviamos o 'cod' recebido
-            var response = await client.GetAsync("https://dragonball-api.com/api/characters/{cod}");
+            var response = await client.GetAsync("characters/" + cod);
             if (!response.IsSuccessStatusCode) {
                 // Artigo não encontrado ou erro na API
                 return NotFound();
@@ -30,14 +27,14 @@ namespace TesteCSharp.Pages
             var json = await response.Content.ReadAsStringAsync();
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             // reparar que aqui não temos uma lista !!
-            var artigoResponse = JsonSerializer.Deserialize<List<PersonagemApiResponse>>(json, options)?.FirstOrDefault();
+            var personagemResponse = JsonSerializer.Deserialize<PersonagemApiResponse>(json, options);
 
             // a maneira de como colocamos a Infodragonball com os dados recebidos também é diferente
             Infodragonball = new Personagem {
-                Name = artigoResponse.name,
-                Description = artigoResponse.description,
-                Image = artigoResponse.image,
-                Affiliation = artigoResponse.affiliation
+                Name = personagemResponse.name,
+                Description = personagemResponse.description,
+                Image = personagemResponse.image,
+                Affiliation = personagemResponse.affiliation
             };
 
             return Page();

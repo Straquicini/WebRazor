@@ -1,35 +1,26 @@
 @page
-@model TesteCSharp.Pages.ListdragonballModel
+@model ListdragonballModel
 @{
     ViewData["Title"] = "Dragon Ball Personagens";
 }
 
-<h1>Dragon Ball - Personagens</h1>
+<h1>Dragon Ball : Lista de Personagens</h1>
 
-<div class="container mt-4">
-    <div class="row">
-        @if (Model.Personagens.Any())
+@if (Model.Personagens.Any())
+{
+    <div style="display: flex; flex-wrap: wrap;">
+        @foreach (var personagem in Model.Personagens)
         {
-            @foreach (var personagem in Model.Personagens)
-            {
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <img src="@personagem.Image" class="card-img-top" alt="@personagem.Name" style="height: 300px; object-fit: cover;" />
-                        <div class="card-body">
-                            <h5 class="card-title">@personagem.Name</h5>
-                            <p class="card-text text-muted">ID: @personagem.Id</p>
-                        </div>
-                    </div>
-                </div>
-            }
-        }
-        else
-        {
-            <div class="col-12">
-                <div class="alert alert-info" role="alert">
-                    Nenhum personagem encontrado. Carregando...
-                </div>
+            <div style="border: 1px solid #ccc; margin: 10px; padding: 10px; width: 200px;">
+                    <img src="@personagem.Image" class="card-img-top" alt="@personagem.Name" style="height: 300px;" />
+                    <h5 class="card-title">@personagem.Name</h5>
+                    <p class="card-text text-muted mb-3">ID: @personagem.Id</p>
+                    <a asp-page="/Infodragonball" asp-route-cod="@personagem.Id">Ver Info</a>
             </div>
         }
-    </div>
-</div>
+     </div>
+}
+else
+{
+    <p>Erro a carregar países, não temos listas</p>
+}
